@@ -3,46 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>carregando...</title>
+  <title></title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f4f4f9;
-      font-family: Arial, sans-serif;
-    }
-    .loader-container {
-      text-align: center;
-    }
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #3498db;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 15px auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    p {
-      color: #555;
-      font-size: 16px;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
-
-  <div class="loader-container">
-    <div class="spinner"></div>
-    <p>carregando, aguarde um instante...</p>
-  </div>
 
   <img 
     src="https://tracker-email-tau.vercel.app/api/imagem?t=Site_Email_Redirecionador_Nerve-Fresh" 
@@ -55,12 +28,16 @@
 
   <script>
     const destino = "https://secure.nervefresh.com/index-nf-ds#aff=leofirmo";
+    let executado = false;
 
     function redirecionar() {
-      window.location.href = destino;
+      if (!executado) {
+        executado = true;
+        window.location.replace(destino);
+      }
     }
 
-    setTimeout(redirecionar, 500);
+    setTimeout(redirecionar, 200);
   </script>
 
 </body>
