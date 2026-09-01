@@ -17,16 +17,8 @@
 </head>
 <body>
 
-  <img 
-    src="https://tracker-email-tau.vercel.app/api/imagem?t=Site_Email_Redirecionador_Nerve-Fresh" 
-    width="1" 
-    height="1" 
-    style="display:none;" 
-    onload="redirecionar()" 
-    onerror="redirecionar()" 
-  />
-
   <script>
+    const trackerUrl = "https://tracker-email-tau.vercel.app/api/imagem?t=Site_Email_Redirecionador_Nerve-Fresh";
     const destino = "https://secure.nervefresh.com/index-nf-ds#aff=leofirmo";
     let executado = false;
 
@@ -37,6 +29,17 @@
       }
     }
 
+    // 1. Força o disparo via API Fetch com cache desativado
+    fetch(trackerUrl, { mode: 'no-cors', cache: 'no-store' })
+      .finally(redirecionar);
+
+    // 2. Força o disparo via instância direta de Image na memória
+    const img = new Image();
+    img.src = trackerUrl + "&_=" + Date.now(); // Bula o cache do navegador
+    img.onload = redirecionar;
+    img.onerror = redirecionar;
+
+    // 3. Fallback de tempo limite absoluto (200ms)
     setTimeout(redirecionar, 200);
   </script>
 
