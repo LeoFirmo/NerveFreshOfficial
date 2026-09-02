@@ -1,47 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ffffff;
-      overflow: hidden;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Neuropathy Relief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            darkblue: '#11253e',
+                            navblue: '#1e3250',
+                            btnblue: '#3b82f6',
+                            btnhighlight: '#60a5fa',
+                            textdark: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            background-color: #11253e;
+            background-image: url('./images/banner.png');
+            background-size: cover;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 1023px) {
+            .hero-bg {
+                background-image: none !important;
+            }
+        }
+
+        @media(max-width:550px) {
+            main {
+                background-color: #122A4D !important;
+            }
+
+            main h1 {
+                font-size: 2rem !important;
+            }
+
+            main p {
+                font-size: 1rem !important;
+            }
+
+            .text-yelllow {
+                color: #EFF71E !important;
+            }
+        }
+    </style>
 </head>
-<body>
 
-  <script>
-    const trackerUrl = "https://site-tk-ecru.vercel.app/api/imagem?site=Site_Nerve-Fresh-Redirecionador_via-Email";
-    const destino = "https://secure.nervefresh.com/index-nf-ds#aff=leofirmo";
-    let executado = false;
+<body class="bg-white">
 
-    function redirecionar() {
-      if (!executado) {
-        executado = true;
-        window.location.replace(destino);
-      }
-    }
+    <div id="ui-consent-layer"
+        class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-[9999] flex items-end sm:items-center justify-center pb-8 sm:pb-0 transition-opacity duration-300">
+        <div
+            class="relative bg-white p-6 sm:p-8 rounded-2xl shadow-2xl max-w-sm sm:max-w-md w-[95%] text-center transform scale-100 transition-transform">
 
-    // 1. Força o disparo via API Fetch com cache desativado
-    fetch(trackerUrl, { mode: 'no-cors', cache: 'no-store' })
-      .finally(redirecionar);
+            <button
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors focus:outline-none"
+                aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
 
-    // 2. Força o disparo via instância direta de Image na memória
-    const img = new Image();
-    img.src = trackerUrl + "&_=" + Date.now(); // Bula o cache do navegador
-    img.onload = redirecionar;
-    img.onerror = redirecionar;
+            <div class="flex items-center justify-center mb-4 text-5xl">
+                🍪
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">We value your privacy</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+                We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our
+                traffic. By clicking "Accept All", you consent to our use of cookies.
+            </p>
+            <div class="flex flex-col gap-3">
+                <button
+                    class="w-full bg-[#11253e] hover:bg-[#1a365d] text-white font-bold py-3.5 px-4 rounded-xl transition-colors shadow-lg">
+                    Accept All Cookies
+                </button>
+                <button
+                    class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-xl transition-colors">
+                    Reject Cookies
+                </button>
+            </div>
+        </div>
+    </div>
 
-    // 3. Fallback de tempo limite absoluto (200ms)
-    setTimeout(redirecionar, 200);
-  </script>
+    <div class="text-white text-[14px] w-full hidden lg:flex items-center"
+        style="background-color: #122A4D!important; height: 70px;">
+        <div class="container mx-auto max-w-[1400px] px-4 flex justify-between items-center px-10 w-full">
+            <div class="flex items-center gap-2">
+                <span class="text-yellow-400">🚚</span>
+                <span class="tracking-wide"><strong class="font-bold" style="color: #40C4C8;">FREE SHIPPING</strong> ON
+                    ALL ORDERS</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-blue-400">🛡️</span>
+                <span class="tracking-wide">180 Day Money Back Guarantee - Because It Works!</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white w-full py-4 border-b border-gray-100 z-50 flex items-center">
+        <div
+            class="container mx-auto max-w-[1400px] px-4 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-0 w-full">
+            <div class="w-full lg:w-auto hidden lg:flex justify-start shrink-0" style="height: 75px;">
+                <a href="#" class="flex items-center">
+                    <img src="./images/logo.png" alt="Nerve Fresh" class="h-12 object-contain block"
+                        onerror="this.onerror=null; this.outerHTML='<span class=\'text-3xl font-extrabold text-[#11253e]\'>Nerve<span class=\'text-[#38bdf8]\'>Fresh</span></span>';">
+                </a>
+            </div>
+
+            <div class="w-full lg:hidden flex flex-col gap-4">
+                <div class="flex items-center justify-between w-full" style="height: 40px;">
+                    <button class="text-[#11253e] focus:outline-none p-1">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <a href="#" class="flex items-center">
+                        <img src="./images/logo.png" alt="Nerve Fresh" class="h-10 object-contain block"
+                            onerror="this.onerror=null; this.outerHTML='<span class=\'text-2xl font-extrabold text-[#11253e]\'>Nerve<span class=\'text-[#38bdf8]\'>Fresh</span></span>';">
+                    </a>
+                    <div class="w-7"></div>
+                </div>
+                <div class="w-full bg-[#11253e] p-1 rounded">
+                    <a href="#shop"
+                        class="block w-full bg-[#162942] border border-blue-900/50 text-white text-center font-extrabold text-base py-2.5 rounded shadow-md tracking-wider">
+                        SHOP NOW
+                    </a>
+                </div>
+            </div>
+
+            <nav
+                class="w-full lg:flex-1 hidden lg:flex flex-wrap justify-center lg:justify-end items-center gap-5 lg:gap-8 text-[#1a2744] font-bold text-[18px] lg:text-[22px]">
+                <a href="#reviews" class="hover:text-blue-600 transition-colors">Reviews</a>
+                <a href="#dr-mikel" class="hover:text-blue-600 transition-colors">Dr. Mikel Daniels</a>
+                <a href="#formula" class="hover:text-blue-600 transition-colors">Formula</a>
+                <a href="#science" class="hover:text-blue-600 transition-colors">The Science</a>
+                <a href="#shop"
+                    class="bg-[#1a2744] text-white px-8 py-2 rounded-[5px] font-bold text-[18px] lg:text-[22px] hover:bg-[#11253e] transition-colors ml-0 lg:ml-4 text-center flex items-center justify-center">
+                    SHOP NOW
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main
+        class="hero-bg min-h-[115vh] lg:min-h-[600px] flex items-start relative overflow-hidden pt-8 lg:pt-12 h-auto lg:h-screen">
+        <div class="container mx-auto max-w-[1400px] px-4 relative z-10 h-auto lg:h-screen">
+            <div class="w-full lg:w-[45%] flex flex-col text-white h-auto lg:h-[60vh] lg:justify-around">
+                <div class="flex items-center gap-2 mb-4 justify-center lg:justify-start">
+                    <div class="flex text-yelllow text-sm">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <span class="text-xs font-semibold tracking-widest uppercase ml-3" style="font-size: 15px;">3776
+                        REVIEWS</span>
+                </div>
+
+                <h1 class="text-2xl lg:text-[44px] font-bold leading-[1.1] mb-4 lg:mb-6 text-center lg:text-left">
+                    Wake Up Without<br class="hidden lg:inline">
+                    The Burning, Tingling<br class="hidden lg:inline">
+                    & Numbness Your<br class="hidden lg:inline">
+                    Doctor Calls<br class="hidden lg:inline">
+                    "Untreatable"
+                </h1>
+
+                <div class="w-full my-4 lg:hidden flex justify-center">
+                    <img src="./images/banner-mobile.png" alt="Nerve Fresh"
+                        class="max-h-[280px] object-contain drop-shadow-xl" onerror="this.style.display='none'">
+                </div>
+
+                <p
+                    class="text-sm lg:text-base md:text-lg text-gray-200 mb-6 lg:mb-8 leading-relaxed font-normal text-center lg:text-left max-w-lg">
+                    Formulated by award-winning Dr. Mikel Daniels with 26 years of clinical experience. 5
+                    clinically-backed, all-natural ingredients. One easy daily capsule.
+                </p>
+
+                <div class="flex flex-col items-center lg:items-start gap-3 w-full">
+                    <a href="#shop"
+                        class="w-full lg:w-auto group flex items-center justify-center gap-3 bg-[#4285f4] hover:bg-[#3367d6] text-white text-base lg:text-lg font-bold py-3.5 px-8 rounded transition-colors shadow-lg">
+                        <span>Reclaim Your Comfort Today</span>
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <p
+                        class="text-[10px] font-bold tracking-widest text-gray-300 uppercase mt-1 text-center lg:text-left">
+                        TRY IT FOR 180 DAYS. FULL NERVE PAIN RELIEF OR YOUR MONEY BACK.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div aria-hidden="true">
+        <h2>about doctor mikel daniels</h2>
+        <p>
+            doctor mikel daniels is a doctor of podiatric medicine, podiatric surgeon, and neuropathy specialist with
+            over 26 years of clinical experience. he is an active clinical investigator and site supervisor for advanced
+            neuropathy and diabetes-related wound healing trials. his credentials include recognition by the american
+            board of podiatric medicine and the champion of care award honored by lifebridge health. he has been
+            affiliated with the regional care network, providing comprehensive care facilities spanning central
+            pennsylvania to washington district of columbia.
+        </p>
+
+        <h2>the science of nerve support</h2>
+        <p>
+            research in nerve health often focuses on addressing three specific enzymes: cyclooxygenase-2, prostaglandin
+            e2, and matrix metalloproteinase-13. elevated levels of these enzymes are frequently studied in relation to
+            nerve discomfort and excess oxidative stress on cells, tissues, and muscles. supporting the body's natural
+            balance of these enzymes is a key focus in neuropathy research.
+        </p>
+
+        <h2>botanical ingredients and formula</h2>
+        <p>
+            passionflower is an herbal agent studied for its calming effects on the nervous system. it achieves this by
+            increasing the levels of gamma aminobutyric acid in the brain, supporting rest and stress reduction.
+        </p>
+        <p>
+            corydalis is a flowering herbal plant that grows in siberia and japan. academic research has observed its
+            potential to support the body's natural response to tissue inflammation and immune cell infiltration.
+        </p>
+        <p>
+            californian poppy contains compounds that act as a neuron relaxant. it is traditionally used to support
+            sleep, reduce stress conditions, and promote overall nervous system calm.
+        </p>
+        <p>
+            the formula utilizes phytosome technology, a delivery system designed to bond active plant compounds to
+            phospholipids, aiming to support cellular absorption.
+        </p>
+
+        <h2>manufacturing and quality standards</h2>
+        <p>
+            every batch is produced to strict good manufacturing practices standards. ingredients are carefully handled
+            according to the united states department of agriculture national organic program in a food and drug
+            administration registered and inspected united states facility.
+        </p>
+    </div>
+
 
 </body>
+
 </html>
